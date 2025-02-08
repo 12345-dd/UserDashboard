@@ -1,8 +1,8 @@
-**User Management Dashboard**
+## **User Management Dashboard**
 
 A simple user management dashboard built with React, Vite, and Material UI, allowing users to view, add, edit, and delete users using JSONPlaceholder API.
 
-**Features**
+## **Features**
 
 **View** all users by fetching data from /users endpoint
 
@@ -12,7 +12,7 @@ A simple user management dashboard built with React, Vite, and Material UI, allo
 
 **Delete** a user
 
-**Installation**
+## **Installation**
 
 1.**Clone the repository**:
 
@@ -26,7 +26,7 @@ A simple user management dashboard built with React, Vite, and Material UI, allo
 
   npm install
 
-**Usage**
+## **Usage**
 
 To start the development server:
 
@@ -41,11 +41,11 @@ The project is hosted on Firebase. You can access it here:
 **https://user-dashboard-2485e.web.app/**
 
 
-**API**
+## **API**
 
 This project uses JSONPlaceholder as a mock API for user management.
 
-**Technologies Used**
+## **Technologies Used**
 
 React
 
@@ -57,6 +57,6 @@ React Router
 
 Axios
 
-**License**
+## **License**
 
 This project is open-source and available under the MIT License.
