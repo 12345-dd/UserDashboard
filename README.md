@@ -16,7 +16,7 @@ A simple user management dashboard built with React, Vite, and Material UI, allo
 
 1.**Clone the repository**:
 
-  git clone <your-repo-url>
+  git clone https://github.com/12345-dd/UserDashboard
 
 2.**Navigate to the project directory**:
 
