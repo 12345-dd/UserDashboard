@@ -34,6 +34,13 @@ npm run dev
 
 The app will be available at http://localhost:5173/.
 
+## **Live Demo**
+
+The project is hosted on Firebase. You can access it here:
+
+**https://user-dashboard-2485e.web.app/**
+
+
 **API**
 
 This project uses JSONPlaceholder as a mock API for user management.
