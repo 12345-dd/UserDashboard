@@ -1,8 +1,55 @@
-# React + Vite
+**User Management Dashboard**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple user management dashboard built with React, Vite, and Material UI, allowing users to view, add, edit, and delete users using JSONPlaceholder API.
 
-Currently, two official plugins are available:
+**Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**View** all users by fetching data from /users endpoint
+
+**Add** a new user (simulated API response)
+
+**Edit** an existing user
+
+**Delete** a user
+
+**Installation**
+
+1.**Clone the repository**:
+
+  git clone <your-repo-url>
+
+2.**Navigate to the project directory**:
+
+  cd user-management-dashboard
+
+3.**Install dependencies**:
+
+  npm install
+
+**Usage**
+
+To start the development server:
+
+npm run dev
+
+The app will be available at http://localhost:5173/.
+
+**API**
+
+This project uses JSONPlaceholder as a mock API for user management.
+
+**Technologies Used**
+
+React
+
+Vite
+
+Material UI
+
+React Router
+
+Axios
+
+**License**
+
+This project is open-source and available under the MIT License.
