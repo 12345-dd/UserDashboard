@@ -20,7 +20,7 @@ A simple user management dashboard built with React, Vite, and Material UI, allo
 
 2.**Navigate to the project directory**:
 
-  cd user-management-dashboard
+  cd UserDashboard
 
 3.**Install dependencies**:
 
