@@ -1,25 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Table, TableHead, TableRow, TableCell, TableBody, Button, Snackbar, Alert } from "@mui/material";
+import { Table, TableHead, TableRow, TableCell, TableBody, Button, Snackbar, Alert, Typography } from "@mui/material";
 
-export const UserList = ({URL}) => {
-  const [Users, setUsers] = useState([]);
+export const UserList = ({ URL, Users, setUsers }) => {
   const [Error, setError] = useState(null);
   const [Success, setSuccess] = useState(null);
-
-  useEffect(() => {
-    const getAllUsers = async () => {
-      try {
-        const res = await axios.get(URL);
-        setUsers(res.data);
-      } catch {
-        setError("Failed to fetch users");
-      }
-    };
-    getAllUsers();
-  }, []);
-
 
   const handleDelete = async (id) => {
     try {
@@ -39,7 +25,9 @@ export const UserList = ({URL}) => {
       <Snackbar anchorOrigin={{ vertical: "top", horizontal: "center" }} open={!!Success} autoHideDuration={3000} onClose={() => setSuccess(null)}>
         <Alert severity="success">{Success}</Alert>
       </Snackbar>
-      <Button variant="contained" color="primary" component={Link} to="/addUser">Add User</Button>
+      <Button variant="contained" color="primary" component={Link} to="/addUser" style={{ marginBottom: "10px" }}>
+        Add User
+      </Button>
       <Table>
         <TableHead>
           <TableRow>
@@ -56,8 +44,12 @@ export const UserList = ({URL}) => {
               <TableCell>{user.name}</TableCell>
               <TableCell>{user.email}</TableCell>
               <TableCell>
-                <Button variant="outlined" color="primary" component={Link} to={`/edit/${user.id}`}>Edit</Button>
-                <Button variant="outlined" color="secondary" onClick={() => handleDelete(user.id)}>Delete</Button>
+                <Button variant="outlined" color="primary" component={Link} to={`/edit/${user.id}`}>
+                  Edit
+                </Button>
+                <Button variant="outlined" color="secondary" onClick={() => handleDelete(user.id)} style={{ marginLeft: "10px" }}>
+                  Delete
+                </Button>
               </TableCell>
             </TableRow>
           ))}
@@ -65,4 +57,5 @@ export const UserList = ({URL}) => {
       </Table>
     </div>
   );
-}
+};
+

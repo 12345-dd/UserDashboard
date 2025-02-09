@@ -3,31 +3,33 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { TextField, Button, Container, Typography, Snackbar, Alert } from "@mui/material";
 
-export const EditUser = ({ URL }) => {
+export const EditUser = ({ URL, Users, setUsers }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    const getUserById = async () => {
-      try {
-        const res = await axios.get(`${URL}/${id}`);
-        setName(res.data.name);
-        setEmail(res.data.email);
-      } catch {
-        setError("Failed to fetch user details");
-      }
-    };
-    getUserById();
-  }, [URL, id]);
+    const user = Users.find((u) => u.id === parseInt(id));
+    if (user) {
+      setName(user.name);
+      setEmail(user.email);
+    } else {
+      setError("User not found");
+    }
+  }, [Users, id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       await axios.put(`${URL}/${id}`, { id, name, email });
+
+      setUsers((prevUsers) =>
+        prevUsers.map((user) => (user.id === parseInt(id) ? { ...user, name, email } : user))
+      );
 
       setSuccess("User updated successfully!");
 
@@ -57,4 +59,5 @@ export const EditUser = ({ URL }) => {
     </Container>
   );
 };
+
 
